@@ -18,7 +18,7 @@ void first(char *quote)
 	{
 		otvet[i] = '_';
 	}
-	for (int answ = 0; answ < 11;)
+	for (int answ = 0; answ < 10;)
 	{
 		char a;
 		cout << "введите-> ";
@@ -79,7 +79,7 @@ void postroenie(int answ)
 		cout << " |" << endl;
 		break;
 	case 2:
-		cout << " " << endl;
+		cout << " "  << endl;
 		cout << " |" << endl;
 		cout << " |" << endl;
 		cout << " |" << endl;
@@ -97,6 +97,7 @@ void postroenie(int answ)
 		cout << " |" << endl;
 		cout << " |" << endl;
 		cout << "_|___" << endl;
+		break;
 	case 4:
 		cout << "________________" << endl;
 		cout << " |            |  " << endl;
@@ -166,9 +167,11 @@ void postroenie(int answ)
 		cout << " |           ( )   " << endl;
 		cout << " |" << endl;
 		cout << "_|___" << endl;
+		cout << "вы проиграли " << endl;
 		break;
 
 	default:
+		cout << "вы проиграли " << endl;
 		break;
 	}
 }
