@@ -11,7 +11,8 @@ void first(char *quote)
 	//system("cls");
 	cout << "Количество букв в слове:" << strlen(quote) << endl;
 	result = strlen(quote);
-	//for (int i = 0; i < strlen(quote); i++)cout << *(quote + i) << endl;
+	//for (int i = 0; i < strlen(quote); i++)cout <<
+	//*(quote + i) << endl;
 	
 	char* otvet = new char[result];
 	for (int i = 0; i < result; i++)
@@ -27,13 +28,15 @@ void first(char *quote)
 		for (int i = 0; i <= result; i++)
 		{
 			if (quote[i] == a) 
-			{//не понимаю почему не фиксится тема с заглавной буквой А(С МАЛЕНЬКОЙ РАБОТАЕТ)
-				cout << "В слове эта буква стоит на " << i + 1 << " месте" << endl;
-				// тут надо дописать 32 if так чтобы была проверка всех букв алфавита можешь попробовать через switch
-				 otvet[i] = a;
-				 break;
-			}
-				if (i == result)
+				{//не понимаю почему не фиксится тема с 
+				 //заглавной буквой А(С МАЛЕНЬКОЙ РАБОТАЕТ)
+					cout << "В слове эта буква стоит на " <<
+						i + 1 << " месте" << endl;
+					otvet[i] = a;
+					break;
+				}
+			
+			if (i == result)	
 				{
 					cout << "нету такой буквы"<< endl;
 					answ++;
