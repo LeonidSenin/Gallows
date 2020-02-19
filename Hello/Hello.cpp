@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include <string>
 #include <Windows.h>
+#include <conio.h>
 using namespace std;
 void postroenie(int answ);
 void first(char *quote)
@@ -19,30 +20,54 @@ void first(char *quote)
 	{
 		otvet[i] = '_';
 	}
+	int pobeda = 0;
 	for (int answ = 0; answ < 10;)
 	{
+		int povtor = 0;
 		char a;
+
+		if ( pobeda == result)
+			{
+				cout << "вы молодец!!";
+				exit(0);
+				//break;
+			}
+
 		cout << "введите-> ";
 		cin >> a;
 		cout << endl;
+		
 		for (int i = 0; i <= result; i++)
 		{
 			if (quote[i] == a) 
-				{//не понимаю почему не фиксится тема с 
-				 //заглавной буквой А(С МАЛЕНЬКОЙ РАБОТАЕТ)
-					cout << "В слове эта буква стоит на " <<
-						i + 1 << " месте" << endl;
-					otvet[i] = a;
-					break;
-				}
-			
-			if (i == result)	
+			{//не понимаю почему не фиксится тема с 
+			 //заглавной буквой А(С МАЛЕНЬКОЙ РАБОТАЕТ)
+				cout << "В слове эта буква стоит на " <<
+				i + 1 << " месте" << endl;
+				otvet[i] = a;
+				povtor++;
+				pobeda++;
+
+			}
+
+			else 
+			{
+				if (i == result && povtor!=0)
 				{
-					cout << "нету такой буквы"<< endl;
-					answ++;
-					postroenie(answ);
 					break;
 				}
+				else if (povtor==0 && i==result)
+				{
+				cout << "нету такой буквы" << endl;
+				answ++;
+				postroenie(answ);
+				break;
+				}
+		
+			}
+
+			
+
 		}
 		for (int i = 0; i <= result-1; i++)
 		{
@@ -50,8 +75,7 @@ void first(char *quote)
 		}
 		cout << endl;
 	}
-	//вставка букввы
-	//Нужно добавить в код 1)Чтобы ставилась 1 буква (К_ _...) 2)Чтобы при обходе букв она ставилась в слово 
+	
 	delete[] otvet;
 }
 int main()
@@ -170,11 +194,11 @@ void postroenie(int answ)
 		cout << " |           ( )   " << endl;
 		cout << " |" << endl;
 		cout << "_|___" << endl;
-		cout << "вы проиграли " << endl;
+		cout << "Вы проиграли " << endl;
 		break;
 
 	default:
-		cout << "вы проиграли " << endl;
+		cout << "ERROR " << endl;
 		break;
 	}
 }
